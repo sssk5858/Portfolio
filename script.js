@@ -43,7 +43,7 @@ function initThemeToggle() {
             themeIcon.className = 'fas fa-sun text-amber-400';
             themeBtn.setAttribute('aria-label', 'Switch to light mode');
         } else {
-            themeIcon.className = 'fas fa-moon text-blue-600';
+            themeIcon.className = 'fas fa-moon text-[var(--accent-color)]';
             themeBtn.setAttribute('aria-label', 'Switch to dark mode');
         }
     }

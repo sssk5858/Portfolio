@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CDN & Configuration -->
@@ -24,6 +24,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     }
                 }
@@ -36,22 +37,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     <!-- Custom CSS (Loaded with cache-busting query) -->
-    <link rel="stylesheet" href="styles.css?v=1.2">
+    <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 navbar top-0 left-0">
-        <div class="container mx-auto px-6 py-4">
+    <nav class="fixed w-full z-50 navbar navbar-floating top-0 left-0">
+        <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <!-- Brand Logo -->
                 <a href="#home" class="text-2xl font-extrabold gradient-text tracking-tight flex items-center gap-2">
-                    <span class="font-mono text-blue-500 text-xl">&lt;</span>Sai_sunkara<span
-                        class="font-mono text-blue-500 text-xl">/&gt;</span>
+                    <span class="font-mono text-[var(--accent-color)] text-xl">&lt;</span>Sai_sunkara<span
+                        class="font-mono text-[var(--accent-color)] text-xl">/&gt;</span>
                 </a>
 
                 <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-10">
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="nav-link active">Home</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#skills" class="nav-link">Skills</a>
@@ -59,10 +60,16 @@
                     <a href="#contact" class="nav-link">Contact</a>
 
                     <!-- Dark / Light Theme Toggle Button -->
-                    <button id="theme-toggle" class="theme-toggle-btn ml-4" title="Toggle Theme"
+                    <button id="theme-toggle" class="theme-toggle-btn ml-2" title="Toggle Theme"
                         aria-label="Toggle light and dark mode">
                         <i id="theme-toggle-icon" class="fas fa-sun text-amber-400"></i>
                     </button>
+
+                    <!-- Let's Talk CTA Pill -->
+                    <a href="#contact"
+                        class="px-5 py-2.5 rounded-full btn-primary font-bold text-xs flex items-center gap-1.5 ml-2">
+                        Let's Talk <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Button & Theme Toggle -->
@@ -73,7 +80,7 @@
                     </button>
 
                     <button id="menu-toggle"
-                        class="p-2 rounded-lg text-slate-300 hover:text-blue-400 focus:outline-none"
+                        class="p-2 rounded-lg text-slate-300 hover:text-[var(--accent-color)] focus:outline-none"
                         aria-label="Toggle Menu" aria-expanded="false">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
@@ -82,7 +89,7 @@
 
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="md:hidden">
-                <div class="py-4 space-y-3 flex flex-col border-t border-slate-800/50 mt-3">
+                <div class="py-4 space-y-3 flex flex-col border-t border-[var(--border-color)] mt-3">
                     <a href="#home" class="nav-link active py-2">Home</a>
                     <a href="#about" class="nav-link py-2">About</a>
                     <a href="#skills" class="nav-link py-2">Skills</a>
@@ -94,7 +101,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-28 pb-16 relative overflow-hidden">
+    <section id="home" class="min-h-screen flex items-center pt-32 pb-16 relative overflow-hidden">
         <div class="hero-glow-bg"></div>
 
         <div class="container mx-auto px-6 relative z-10">
@@ -102,18 +109,18 @@
 
                 <!-- Left Content -->
                 <div class="lg:w-7/12 reveal reveal-left">
-                    <div
-                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-sm mb-6">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Full-Stack & AI Systems Developer
+                    <div class="status-pill-badge mb-6">
+                        <span
+                            class="w-2.5 h-2.5 rounded-full bg-[var(--accent-color)] animate-pulse shadow-[0_0_10px_var(--accent-color)]"></span>
+                        JAVA FULL-STACK &amp; AI DEVELOPER • HYDERABAD, INDIA
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
-                        Hi, I'm <span class="gradient-text">Sai siva kumar Sunkara</span>
+                        Hi, I'm <span class="text-white font-extrabold">Sai siva kumar Sunkara</span>
                     </h1>
 
-                    <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-blue-400 h-10 flex items-center">
-                        <span id="typewriter-text"></span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 flex items-center h-12">
+                        <span id="typewriter-text" class="font-serif-italic"></span>
                         <span class="typewriter-cursor">&nbsp;</span>
                     </h2>
 
@@ -149,11 +156,10 @@
                     </div>
                 </div>
 
-                <!-- Right Avatar Container (Enlarged Radius Size) -->
+                <!-- Right Avatar Container (Soft Square with Soft Glow) -->
                 <div class="lg:w-5/12 flex justify-center reveal reveal-right delay-200">
                     <div class="avatar-container floating-avatar w-64 h-64 sm:w-80 sm:h-80 lg:w-[26rem] lg:h-[26rem]">
-                        <img src="Images/hero.jpeg" alt="Sai siva kumar Sunkara"
-                            class="w-full h-full object-cover rounded-full">
+                        <img src="Images/hero.jpeg" alt="Sai siva kumar Sunkara" class="w-full h-full object-cover">
                     </div>
                 </div>
 
@@ -161,8 +167,36 @@
         </div>
     </section>
 
+    <!-- Decorative Diagonal Marquee Ribbon -->
+    <div class="marquee-ribbon-container">
+        <div class="marquee-ribbon">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>JAVA DEVELOPER</span><span class="marquee-bullet"></span>
+                    <span>SPRING BOOT</span><span class="marquee-bullet"></span>
+                    <span>FULL-STACK</span><span class="marquee-bullet"></span>
+                    <span>ENTERPRISE AI</span><span class="marquee-bullet"></span>
+                    <span>LLMs &amp; RAG</span><span class="marquee-bullet"></span>
+                    <span>MICROSERVICES</span><span class="marquee-bullet"></span>
+                    <span>KUBERNETES</span><span class="marquee-bullet"></span>
+                    <span>REACT</span><span class="marquee-bullet"></span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span>JAVA DEVELOPER</span><span class="marquee-bullet"></span>
+                    <span>SPRING BOOT</span><span class="marquee-bullet"></span>
+                    <span>FULL-STACK</span><span class="marquee-bullet"></span>
+                    <span>ENTERPRISE AI</span><span class="marquee-bullet"></span>
+                    <span>LLMs &amp; RAG</span><span class="marquee-bullet"></span>
+                    <span>MICROSERVICES</span><span class="marquee-bullet"></span>
+                    <span>KUBERNETES</span><span class="marquee-bullet"></span>
+                    <span>REACT</span><span class="marquee-bullet"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
-    <section id="about" class="py-24 bg-slate-900/40 relative">
+    <section id="about" class="py-24 relative">
         <div class="container mx-auto px-6">
 
             <!-- Section Header -->
@@ -176,7 +210,7 @@
                 <!-- About Image -->
                 <div class="lg:w-4/12 flex justify-center reveal reveal-left">
                     <div
-                        class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden card-surface p-2 shadow-xl border border-slate-700/50">
+                        class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden card-surface p-2 shadow-xl border border-[var(--border-color)]">
                         <img src="Images/about-me.jpg" alt="About Sai" class="w-full h-full object-cover rounded-xl">
                     </div>
                 </div>
@@ -206,11 +240,13 @@
                         </div>
                         <div class="p-4 rounded-xl card-surface">
                             <span class="text-slate-500 font-mono block mb-1">Email</span>
-                            <span class="font-semibold text-base text-blue-400">saisunkara369@gmail.com</span>
+                            <span
+                                class="font-semibold text-base text-[var(--accent-color)]">saisunkara369@gmail.com</span>
                         </div>
                         <div class="p-4 rounded-xl card-surface">
                             <span class="text-slate-500 font-mono block mb-1">Specialization</span>
-                            <span class="font-semibold text-base text-blue-400">Java Full-Stack & AI Systems</span>
+                            <span class="font-semibold text-base text-[var(--accent-color)]">Java Full-Stack &amp; AI
+                                Systems</span>
                         </div>
                         <div class="p-4 rounded-xl card-surface">
                             <span class="text-slate-500 font-mono block mb-1">Location</span>
@@ -244,7 +280,7 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div
-                                class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-semibold mb-2">
+                                class="inline-block px-3 py-1 rounded-full bg-[var(--accent-color)]/10 text-[var(--accent-color)] text-xs font-mono font-semibold mb-2 border border-[var(--accent-color)]/20">
                                 Aug 2025 - March 2026
                             </div>
                             <h4 class="text-lg font-bold">Associate software engineer</h4>
@@ -261,7 +297,7 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div
-                                class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-semibold mb-2">
+                                class="inline-block px-3 py-1 rounded-full bg-[var(--accent-color)]/10 text-[var(--accent-color)] text-xs font-mono font-semibold mb-2 border border-[var(--accent-color)]/20">
                                 Aug 2024 - Apr 2025
                             </div>
                             <h4 class="text-lg font-bold">Java Intern</h4>
@@ -284,7 +320,7 @@
         <div class="container mx-auto px-6">
 
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Technical & <span
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Technical &amp; <span
                         class="gradient-text">AI Expertise</span></h2>
                 <p class="text-slate-400 mt-3 text-base max-w-xl mx-auto">Categorized stack covering Java backend
                     engineering, enterprise AI integration, modern web interfaces, and cloud tooling.</p>
@@ -298,11 +334,11 @@
                 <div class="skill-category-card reveal reveal-left">
                     <div class="flex items-center gap-3 mb-6">
                         <div
-                            class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold">
+                            class="w-10 h-10 rounded-xl bg-[var(--accent-color)]/10 text-[var(--accent-color)] flex items-center justify-center font-bold border border-[var(--accent-color)]/20">
                             <i class="fas fa-server text-lg"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold">Backend & Java Core</h3>
+                            <h3 class="text-lg font-bold">Backend &amp; Java Core</h3>
                             <span class="text-xs text-slate-500 font-mono">Server-side Architecture</span>
                         </div>
                     </div>
@@ -311,7 +347,7 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-java-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">Java (Core & Enterprise)</span>
+                                <span class="font-medium text-sm">Java (Core &amp; Enterprise)</span>
                             </div>
                             <span class="skill-badge-level">Specialist</span>
                         </div>
@@ -319,7 +355,7 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-spring-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">Spring Boot & Microservices</span>
+                                <span class="font-medium text-sm">Spring Boot &amp; Microservices</span>
                             </div>
                             <span class="skill-badge-level">Advanced</span>
                         </div>
@@ -327,15 +363,15 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-mysql-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">SQL & PostgreSQL Databases</span>
+                                <span class="font-medium text-sm">SQL &amp; PostgreSQL Databases</span>
                             </div>
                             <span class="skill-badge-level">Advanced</span>
                         </div>
 
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-network-wired text-blue-400"></i>
-                                <span class="font-medium text-sm">RESTful APIs & Event Streaming</span>
+                                <i class="fas fa-network-wired text-[var(--accent-color)]"></i>
+                                <span class="font-medium text-sm">RESTful APIs &amp; Event Streaming</span>
                             </div>
                             <span class="skill-badge-level">Proficient</span>
                         </div>
@@ -346,43 +382,43 @@
                 <div class="skill-category-card reveal reveal-right delay-100">
                     <div class="flex items-center gap-3 mb-6">
                         <div
-                            class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+                            class="w-10 h-10 rounded-xl bg-[var(--accent-color)]/10 text-[var(--accent-color)] flex items-center justify-center font-bold border border-[var(--accent-color)]/20">
                             <i class="fas fa-brain text-lg"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold">Enterprise AI & LLM Systems</h3>
-                            <span class="text-xs text-slate-500 font-mono">AI Knowledge & Agents</span>
+                            <h3 class="text-lg font-bold">Enterprise AI &amp; LLM Systems</h3>
+                            <span class="text-xs text-slate-500 font-mono">AI Knowledge &amp; Agents</span>
                         </div>
                     </div>
 
                     <div class="space-y-3">
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-database text-emerald-400"></i>
-                                <span class="font-medium text-sm">RAG & Vector Databases</span>
+                                <i class="fas fa-database text-[var(--accent-color)]"></i>
+                                <span class="font-medium text-sm">RAG &amp; Vector Databases</span>
                             </div>
                             <span class="skill-badge-level">AI Core</span>
                         </div>
 
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-robot text-emerald-400"></i>
-                                <span class="font-medium text-sm">LLMs & Autonomous AI Agents</span>
+                                <i class="fas fa-robot text-[var(--accent-color)]"></i>
+                                <span class="font-medium text-sm">LLMs &amp; Autonomous AI Agents</span>
                             </div>
                             <span class="skill-badge-level">AI Core</span>
                         </div>
 
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-file-contract text-emerald-400"></i>
-                                <span class="font-medium text-sm">Multimodal OCR & Doc Search</span>
+                                <i class="fas fa-file-contract text-[var(--accent-color)]"></i>
+                                <span class="font-medium text-sm">Multimodal OCR &amp; Doc Search</span>
                             </div>
                             <span class="skill-badge-level">Specialist</span>
                         </div>
 
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-microchip text-emerald-400"></i>
+                                <i class="fas fa-microchip text-[var(--accent-color)]"></i>
                                 <span class="font-medium text-sm">AI Pipeline Integration</span>
                             </div>
                             <span class="skill-badge-level">Proficient</span>
@@ -394,11 +430,11 @@
                 <div class="skill-category-card reveal reveal-left delay-200">
                     <div class="flex items-center gap-3 mb-6">
                         <div
-                            class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold">
+                            class="w-10 h-10 rounded-xl bg-[var(--accent-color)]/10 text-[var(--accent-color)] flex items-center justify-center font-bold border border-[var(--accent-color)]/20">
                             <i class="fas fa-desktop text-lg"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold">Frontend & User Interface</h3>
+                            <h3 class="text-lg font-bold">Frontend &amp; User Interface</h3>
                             <span class="text-xs text-slate-500 font-mono">Responsive Web Applications</span>
                         </div>
                     </div>
@@ -407,7 +443,7 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-javascript-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">JavaScript (ES6+) & Modern Web</span>
+                                <span class="font-medium text-sm">JavaScript (ES6+) &amp; Modern Web</span>
                             </div>
                             <span class="skill-badge-level">Advanced</span>
                         </div>
@@ -423,7 +459,7 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-html5-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">HTML5 & Semantic Structure</span>
+                                <span class="font-medium text-sm">HTML5 &amp; Semantic Structure</span>
                             </div>
                             <span class="skill-badge-level">Advanced</span>
                         </div>
@@ -431,7 +467,7 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-css3-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">CSS3 & Responsive UX</span>
+                                <span class="font-medium text-sm">CSS3 &amp; Responsive UX</span>
                             </div>
                             <span class="skill-badge-level">Advanced</span>
                         </div>
@@ -442,12 +478,12 @@
                 <div class="skill-category-card reveal reveal-right delay-300">
                     <div class="flex items-center gap-3 mb-6">
                         <div
-                            class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+                            class="w-10 h-10 rounded-xl bg-[var(--accent-color)]/10 text-[var(--accent-color)] flex items-center justify-center font-bold border border-[var(--accent-color)]/20">
                             <i class="fas fa-cloud text-lg"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold">Cloud, DevOps & Tools</h3>
-                            <span class="text-xs text-slate-500 font-mono">Infrastructure & Workflows</span>
+                            <h3 class="text-lg font-bold">Cloud, DevOps &amp; Tools</h3>
+                            <span class="text-xs text-slate-500 font-mono">Infrastructure &amp; Workflows</span>
                         </div>
                     </div>
 
@@ -455,15 +491,15 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-kubernetes-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">Kubernetes & Container Deployments</span>
+                                <span class="font-medium text-sm">Kubernetes &amp; Container Deployments</span>
                             </div>
                             <span class="skill-badge-level">Cloud</span>
                         </div>
 
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-layer-group text-amber-400"></i>
-                                <span class="font-medium text-sm">Kafka & Redis In-Memory Cache</span>
+                                <i class="fas fa-layer-group text-[var(--accent-color)]"></i>
+                                <span class="font-medium text-sm">Kafka &amp; Redis In-Memory Cache</span>
                             </div>
                             <span class="skill-badge-level">Cloud</span>
                         </div>
@@ -479,7 +515,7 @@
                         <div class="skill-pill">
                             <div class="flex items-center gap-3">
                                 <i class="devicon-intellij-plain colored text-xl"></i>
-                                <span class="font-medium text-sm">IntelliJ IDEA & Development Tooling</span>
+                                <span class="font-medium text-sm">IntelliJ IDEA &amp; Development Tooling</span>
                             </div>
                             <span class="skill-badge-level">Advanced</span>
                         </div>
@@ -491,7 +527,7 @@
             <!-- Tools & Technologies Grid -->
             <div class="reveal">
                 <h3 class="text-2xl font-bold mb-10 text-center">
-                    Tools & <span class="gradient-text">Technologies</span>
+                    Tools &amp; <span class="gradient-text">Technologies</span>
                 </h3>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
@@ -561,13 +597,13 @@
     </section>
 
     <!-- Modern Minimalist Tech Cards Projects Section -->
-    <section id="projects" class="py-24 bg-slate-900/40 relative">
+    <section id="projects" class="py-24 relative">
         <div class="container mx-auto px-6">
 
             <!-- Section Title -->
             <div class="text-center mb-12 reveal">
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Featured <span
-                        class="gradient-text">Projects & Systems</span></h2>
+                        class="gradient-text">Projects &amp; Systems</span></h2>
                 <p class="text-slate-400 mt-3 text-base max-w-xl mx-auto">Production-ready AI architectures, full-stack
                     enterprise applications, and modern web platforms.</p>
                 <div class="section-title-line"></div>
@@ -576,7 +612,7 @@
             <!-- Project Category Filter Tabs -->
             <div class="flex flex-wrap justify-center items-center gap-3 mb-14 reveal">
                 <button class="project-filter-btn active" data-filter="all">All Systems</button>
-                <button class="project-filter-btn" data-filter="ai">AI & LLM Platforms</button>
+                <button class="project-filter-btn" data-filter="ai">AI &amp; LLM Platforms</button>
                 <button class="project-filter-btn" data-filter="fullstack">Full-Stack Web</button>
             </div>
 
@@ -586,29 +622,32 @@
                 <!-- Project 1: AIDA -->
                 <div class="project-item reveal" data-category="ai">
                     <div
-                        class="card-surface card-hover overflow-hidden rounded-2xl flex flex-col h-full border border-blue-500/30">
+                        class="card-surface card-hover overflow-hidden rounded-2xl flex flex-col h-full border border-[var(--border-color)]">
 
                         <!-- Terminal Bar Header -->
                         <div
-                            class="px-4 py-2.5 bg-slate-950/80 border-b border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                            class="px-4 py-2.5 bg-[#070B07] border-b border-[var(--border-color)] flex items-center justify-between font-mono text-xs text-slate-400">
                             <div class="flex items-center gap-1.5">
-                                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+                                <span
+                                    class="w-2.5 h-2.5 rounded-full bg-[var(--accent-color)] inline-block opacity-80"></span>
+                                <span
+                                    class="w-2.5 h-2.5 rounded-full bg-[var(--accent-color)] inline-block opacity-50"></span>
+                                <span
+                                    class="w-2.5 h-2.5 rounded-full bg-[var(--accent-color)] inline-block opacity-30"></span>
                             </div>
-                            <span class="text-blue-400 font-semibold">sys.01 // aida-ai-engine.v1</span>
+                            <span class="text-[var(--accent-color)] font-semibold">sys.01 // aida-ai-engine.v1</span>
                         </div>
 
                         <!-- Image Preview -->
-                        <div class="h-48 overflow-hidden relative group bg-slate-950">
+                        <div class="h-48 overflow-hidden relative group bg-[#070B07]">
                             <img src="Images/AIDA.png" alt="AIDA Autonomous Enterprise AI Knowledge Assistant"
                                 class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
                             <div
-                                class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-blue-600/90 text-white font-mono text-xs font-semibold shadow-md backdrop-blur-sm">
+                                class="absolute top-3 right-3 px-3 py-1 rounded-full bg-[var(--accent-color)] text-[#0A0F0A] font-mono text-xs font-bold shadow-md backdrop-blur-sm">
                                 Featured AI System
                             </div>
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                class="absolute inset-0 bg-gradient-to-t from-[#0A0F0A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             </div>
                         </div>
 
@@ -627,15 +666,15 @@
                             <div>
                                 <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
                                     <span class="tech-tag">Spring Boot</span>
-                                    <span class="tech-tag">RAG & LLMs</span>
-                                    <span class="tech-tag">Kafka & Redis</span>
+                                    <span class="tech-tag">RAG &amp; LLMs</span>
+                                    <span class="tech-tag">Kafka &amp; Redis</span>
                                     <span class="tech-tag">Vector DB</span>
                                     <span class="tech-tag">Kubernetes</span>
                                 </div>
 
-                                <div class="flex items-center gap-4 pt-4 border-t border-slate-800">
+                                <div class="flex items-center gap-4 pt-4 border-t border-[var(--border-color)]">
                                     <a href="#"
-                                        class="text-blue-400 hover:text-blue-300 font-mono text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                        class="text-[var(--accent-color)] hover:opacity-80 font-mono text-xs font-semibold inline-flex items-center gap-1.5 transition">
                                         <i class="fas fa-terminal"></i> Demo &gt;
                                     </a>
                                     <a href="#"
@@ -651,11 +690,12 @@
 
                 <!-- Project 2: E-commerce Platform -->
                 <div class="project-item reveal delay-100" data-category="fullstack">
-                    <div class="card-surface card-hover overflow-hidden rounded-2xl flex flex-col h-full">
+                    <div
+                        class="card-surface card-hover overflow-hidden rounded-2xl flex flex-col h-full border border-[var(--border-color)]">
 
                         <!-- Terminal Bar Header -->
                         <div
-                            class="px-4 py-2.5 bg-slate-950/80 border-b border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                            class="px-4 py-2.5 bg-[#070B07] border-b border-[var(--border-color)] flex items-center justify-between font-mono text-xs text-slate-400">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-slate-700 inline-block"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-slate-700 inline-block"></span>
@@ -665,16 +705,16 @@
                         </div>
 
                         <!-- Image Preview -->
-                        <div class="h-48 overflow-hidden relative group bg-slate-950">
+                        <div class="h-48 overflow-hidden relative group bg-[#070B07]">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                                 alt="E-commerce Platform"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <div
-                                class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-800/90 text-blue-400 font-mono text-xs font-semibold shadow-md backdrop-blur-sm border border-slate-700/60">
+                                class="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-800/90 text-[var(--accent-color)] font-mono text-xs font-semibold shadow-md backdrop-blur-sm border border-[var(--border-color)]">
                                 Full-Stack Web
                             </div>
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                class="absolute inset-0 bg-gradient-to-t from-[#0A0F0A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             </div>
                         </div>
 
@@ -697,9 +737,9 @@
                                     <span class="tech-tag">SQL</span>
                                 </div>
 
-                                <div class="flex items-center gap-4 pt-4 border-t border-slate-800">
+                                <div class="flex items-center gap-4 pt-4 border-t border-[var(--border-color)]">
                                     <a href="#"
-                                        class="text-blue-400 hover:text-blue-300 font-mono text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                        class="text-[var(--accent-color)] hover:opacity-80 font-mono text-xs font-semibold inline-flex items-center gap-1.5 transition">
                                         <i class="fas fa-terminal"></i> Demo &gt;
                                     </a>
                                     <a href="#"
@@ -715,11 +755,12 @@
 
                 <!-- Project 3: Developer Portfolio -->
                 <div class="project-item reveal delay-200" data-category="fullstack">
-                    <div class="card-surface card-hover overflow-hidden rounded-2xl flex flex-col h-full">
+                    <div
+                        class="card-surface card-hover overflow-hidden rounded-2xl flex flex-col h-full border border-[var(--border-color)]">
 
                         <!-- Terminal Bar Header -->
                         <div
-                            class="px-4 py-2.5 bg-slate-950/80 border-b border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                            class="px-4 py-2.5 bg-[#070B07] border-b border-[var(--border-color)] flex items-center justify-between font-mono text-xs text-slate-400">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-slate-700 inline-block"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-slate-700 inline-block"></span>
@@ -729,16 +770,16 @@
                         </div>
 
                         <!-- Image Preview -->
-                        <div class="h-48 overflow-hidden relative group bg-slate-950">
+                        <div class="h-48 overflow-hidden relative group bg-[#070B07]">
                             <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                                 alt="Portfolio Website"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <div
-                                class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-800/90 text-blue-400 font-mono text-xs font-semibold shadow-md backdrop-blur-sm border border-slate-700/60">
+                                class="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-800/90 text-[var(--accent-color)] font-mono text-xs font-semibold shadow-md backdrop-blur-sm border border-[var(--border-color)]">
                                 Modern Web
                             </div>
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                class="absolute inset-0 bg-gradient-to-t from-[#0A0F0A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             </div>
                         </div>
 
@@ -761,9 +802,9 @@
                                     <span class="tech-tag">UX Design</span>
                                 </div>
 
-                                <div class="flex items-center gap-4 pt-4 border-t border-slate-800">
+                                <div class="flex items-center gap-4 pt-4 border-t border-[var(--border-color)]">
                                     <a href="#"
-                                        class="text-blue-400 hover:text-blue-300 font-mono text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                        class="text-[var(--accent-color)] hover:opacity-80 font-mono text-xs font-semibold inline-flex items-center gap-1.5 transition">
                                         <i class="fas fa-terminal"></i> Demo &gt;
                                     </a>
                                     <a href="#"
@@ -811,7 +852,7 @@
                     <div class="space-y-6">
                         <div class="flex items-start gap-4 p-4 rounded-xl card-surface">
                             <div
-                                class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                                class="w-12 h-12 rounded-full bg-[var(--accent-color)]/10 text-[var(--accent-color)] flex items-center justify-center shrink-0 border border-[var(--accent-color)]/20">
                                 <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <div>
@@ -822,18 +863,19 @@
 
                         <div class="flex items-start gap-4 p-4 rounded-xl card-surface">
                             <div
-                                class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                                class="w-12 h-12 rounded-full bg-[var(--accent-color)]/10 text-[var(--accent-color)] flex items-center justify-center shrink-0 border border-[var(--accent-color)]/20">
                                 <i class="fas fa-envelope text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-sm text-slate-400 font-mono">Email</h4>
-                                <p class="font-semibold text-base text-blue-400">saisunkara369@gmail.com</p>
+                                <p class="font-semibold text-base text-[var(--accent-color)]">saisunkara369@gmail.com
+                                </p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4 p-4 rounded-xl card-surface">
                             <div
-                                class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                                class="w-12 h-12 rounded-full bg-[var(--accent-color)]/10 text-[var(--accent-color)] flex items-center justify-center shrink-0 border border-[var(--accent-color)]/20">
                                 <i class="fas fa-phone-alt text-xl"></i>
                             </div>
                             <div>
@@ -901,7 +943,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-slate-800/60 bg-slate-950/60 text-slate-400">
+    <footer class="py-12 border-t border-[var(--border-color)] bg-[#070B07] text-slate-400">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div>
@@ -918,9 +960,9 @@
                 </div>
             </div>
 
-            <div class="mt-8 pt-8 border-t border-slate-800/40 text-center text-xs text-slate-500">
-                <p>Designed & Developed with <i class="fas fa-heart text-red-500"></i> & <i
-                        class="fas fa-coffee text-amber-500"></i></p>
+            <div class="mt-8 pt-8 border-t border-[var(--border-color)]/40 text-center text-xs text-slate-500">
+                <p>Designed &amp; Developed with <i class="fas fa-heart text-[var(--accent-color)]"></i> &amp; <i
+                        class="fas fa-coffee text-[var(--accent-color)]"></i></p>
             </div>
         </div>
     </footer>
@@ -931,7 +973,7 @@
     </button>
 
     <!-- Script File (Loaded with cache-busting query) -->
-    <script src="script.js?v=1.2"></script>
+    <script src="script.js?v=1.3"></script>
 </body>
 
 </html>
